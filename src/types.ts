@@ -15,7 +15,10 @@ export interface UsageResponse {
   seven_day: UsageWindow;
   seven_day_opus: UsageWindow | null;
   seven_day_sonnet: UsageWindow | null;
+  seven_day_oauth_apps: UsageWindow | null;
+  seven_day_cowork: UsageWindow | null;
   extra_usage: ExtraUsage | null;
+  [key: string]: unknown;
 }
 
 export interface CachedUsage {

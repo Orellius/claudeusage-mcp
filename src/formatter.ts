@@ -71,6 +71,16 @@ export function formatFullUsage(data: UsageResponse, source: string): string {
     lines.push("");
   }
 
+  if (data.seven_day_oauth_apps) {
+    lines.push(formatWindow("WEEKLY - OAuth Apps", data.seven_day_oauth_apps));
+    lines.push("");
+  }
+
+  if (data.seven_day_cowork) {
+    lines.push(formatWindow("WEEKLY - Cowork", data.seven_day_cowork));
+    lines.push("");
+  }
+
   lines.push(formatExtraUsage(data.extra_usage));
   lines.push("");
 
@@ -109,6 +119,16 @@ export function formatWeeklyLimits(data: UsageResponse): string {
 
   if (data.seven_day_sonnet !== undefined) {
     lines.push(formatWindow("Sonnet", data.seven_day_sonnet));
+    lines.push("");
+  }
+
+  if (data.seven_day_oauth_apps) {
+    lines.push(formatWindow("OAuth Apps", data.seven_day_oauth_apps));
+    lines.push("");
+  }
+
+  if (data.seven_day_cowork) {
+    lines.push(formatWindow("Cowork", data.seven_day_cowork));
     lines.push("");
   }
 
